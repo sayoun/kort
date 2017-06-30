@@ -63,7 +63,7 @@ Launch the API. Default is running on localhost and port 5000.
   * [Creating a shortened link](#creating-a-shortened-link)
   * [Using a shortened link](#using-a-shortened-link)
 
-### Creating a new shortened link
+### Creating a shortened link
 
 using curl
 
@@ -87,15 +87,15 @@ will return a 302 response with the real url located in a `Location` header.
 
 ### Configuration
 
-Kort comes with defaults value for configuration. But you can override everything using a YAML configuration file. One configuration example is provided in the conf directory: [conf.yaml.tmpl](https://github.com/sayoun/kort/blob/master/conf/conf.yaml.tmpl).
+Kort comes with defaults value for configuration. But you can override everything using a YAML configuration file. One configuration example is provided in the conf directory: [conf.yaml.tmpl](https://github.com/sayoun/kort/blob/master/kort/conf/conf.yaml.tmpl).
 
 Kort will search for a configuration file located in `/etc/kort.yaml`, if not found it will use default values.
 
 ### WSGI
 
-You can launch Kort API as a WSGI process, using file provided in the bin directory [wsgi.py](https://github.com/sayoun/kort/blob/master/bin/wsgi.py).
+You can launch Kort API as a WSGI process, using file provided in the bin directory [wsgi.py](https://github.com/sayoun/kort/blob/master/kort/bin/wsgi.py).
 
-One gunicorn example is provided in the conf directory: [kort.gunicorn.tmpl](https://github.com/sayoun/kort/blob/master/conf/kort.gunicorn.tmpl).
+One gunicorn example is provided in the conf directory: [kort.gunicorn.tmpl](https://github.com/sayoun/kort/blob/master/kort/conf/kort.gunicorn.tmpl).
 
 ## License / Copying
 
