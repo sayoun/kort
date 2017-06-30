@@ -1,0 +1,45 @@
+api:
+    host: '0.0.0.0'
+    port: 5000
+    debug: True
+
+secret_key: s3cr3t3c00k!3k0rt
+
+databases:
+    kort:
+        # Database engine configuration
+        sqlalchemy.url: sqlite:///kort.db
+        # Log sql request to logging
+        sqlalchemy.echo: 0
+
+logging:
+    version: 1
+    disable_existing_loggers: False
+    formatters:
+        syslog:
+            format: '%(name)s: [%(process)d] [%(levelname)s] %(message)s'
+        console:
+            format: '%(asctime)s [%(levelname)s]: %(name)s - %(message)s'
+    handlers:
+        console:
+            class: logging.StreamHandler
+            level: INFO
+            stream: ext://sys.stdout
+            formatter: console
+        syslog:
+            class: logging.handlers.SysLogHandler
+            level: INFO
+            address: '/dev/log'
+            formatter: syslog
+    root:
+      level: DEBUG
+      handlers:
+        - syslog
+        - console
+    loggers:
+        kort:
+            level: DEBUG
+            propagate: False
+            handlers:
+                - syslog
+                - console

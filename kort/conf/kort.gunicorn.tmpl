@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+CONFIG = {
+    'mode': 'wsgi',
+    'args': (
+            '--workers=2',
+            '--timeout=60',
+            '--access-logfile=/var/log/gunicorn/kort_access.log',
+            '--error-logfile=/var/log/gunicorn/kort_error.log',
+            '--log-file=/var/log/gunicorn/kort_other.log',
+            'kort.bin.wsgi:application',
+            ),
+}
